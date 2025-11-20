@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitLife Ignite - Your Local Gym</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root {
+    --primary: #FF4500;
+    --secondary: #00BFFF;
+    --dark-bg: #1a1a1a;
+    --light-bg: #f9f9f9;
+    --text-light: #fff;
+    --text-dark: #333;
+    --font-main: 'Arial', sans-serif;
+    --max-width: 1200px;
+}
+
+* {box-sizing:border-box;margin:0;padding:0;}
+body {font-family:var(--font-main);color:var(--text-dark);background:var(--light-bg);line-height:1.6;}
+.container {max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+h1,h2,h3 {font-weight:700;}
+
+.hero {
+    display:flex;
+    align-items:center;
+    min-height:90vh;
+    padding:80px 0;
+    background:var(--dark-bg);
+    color:var(--text-light);
+    flex-wrap:wrap;
+}
+
+.hero .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 40px 0 0;
+}
+
+.hero-content h1 {
+    font-size:3.8rem;
+    margin-bottom:20px;
+    line-height:1.1;
+    color:var(--primary);
+}
+
+.hero-content p {
+    font-size:1.35rem;
+    margin-bottom:30px;
+    color:#ddd;
+}
+
+.cta-button {
+    display:inline-block;
+    background:var(--primary);
+    color:var(--text-light);
+    padding:18px 40px;
+    font-size:1.2rem;
+    font-weight:bold;
+    border-radius:8px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+    min-height:450px;
+    border-radius:10px;
+    background:url('https://media.istockphoto.com/id/1207041834/photo/group-of-young-happy-fit-people-doing-exercises-in-gym.jpg?s=612x612&w=0&k=20&c=3LkL97NzJct4YwSNc_X70FEX9uH-BkKBMY9Vgy1O5sg=') center/cover no-repeat;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+.benefits {padding:80px 0;text-align:center;background:var(--light-bg);}
+.benefits h2 {font-size:2.5rem;margin-bottom:50px;color:var(--text-dark);}
+.benefits-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:40px;}
+.benefit-card {padding:30px 20px;border-radius:8px;background:var(--light-bg);box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+.icon {font-size:3rem;color:var(--primary);margin-bottom:15px;display:inline-block;} 
+.benefit-card h3 {margin-bottom:10px;color:var(--text-dark);}
+
+.social-proof {padding:80px 0;background:#f0f0f0;text-align:center;}
+.social-proof h2 {font-size:2.5rem;margin-bottom:50px;color:var(--text-dark);}
+.testimonials-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.testimonial-card {background:var(--text-light);padding:30px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);text-align:left;}
+.quote-text {font-style:italic;margin-bottom:20px;font-size:1.1rem;color:#555;}
+.member-info {display:flex;align-items:center;}
+.avatar {width:50px;height:50px;border-radius:50%;margin-right:15px;background-size:cover;background-position:center;border:2px solid var(--primary);}
+.member-info h4 {font-weight:bold;color:var(--text-dark);}
+
+.lead-capture {
+    padding:80px 0;
+    background:var(--dark-bg); 
+    color:var(--text-light);
+    text-align:center;
+}
+.lead-capture h2 {
+    font-size:2.8rem;
+    margin-bottom:20px;
+    color:var(--primary); 
+}
+.lead-capture p {font-size:1.2rem;margin-bottom:30px;}
+.email-form {max-width:600px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.email-input {flex-grow:1;padding:15px;border:none;border-radius:5px;font-size:1rem;}
+.submit-button {
+    background:var(--primary); 
+    color:var(--text-light);
+    padding:15px 30px;
+    font-weight:bold;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    flex-shrink:0;
+}
+.error-message {color:#FFCDD2;margin-top:10px;font-size:0.9rem;width:100%;text-align:left;padding-left:5px;}
+
+
+footer {background:var(--dark-bg);color:#999;padding:20px 0;text-align:center;font-size:0.9rem;}
+
+@media (max-width:992px) {
+    .hero .container {
+        flex-direction: column;
+    }
+    .hero-content, .hero-image {
+        max-width: 100%;
+        padding: 0;
+    }
+    .hero-content {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .hero-image {
+        min-height: 300px;
+    }
+    .hero h1 {font-size:2.8rem;}
+    .benefits-grid {grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:768px) {
+    .hero h1 {font-size:2.2rem;}
+    .benefits-grid {grid-template-columns:1fr;}
+    .email-form {flex-direction:column;}
+    .email-input,.submit-button {width:100%;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>
+                Ignite Your Fitness: Join Our Local World-Class Gym!
+            </h1>
+            <p>
+                Experience premium equipment, expert personal trainers, and high-energy group classes right here in Cebu.
+            </p>
+            <a href="#lead-capture" class="cta-button">
+                Claim Your FREE Day Pass
+            </a>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+</header>
+
+
+<section class="benefits">
+    <div class="container">
+        <h2>Facilities & Features</h2>
+        <div class="benefits-grid">
+            
+            <div class="benefit-card">
+                <i class="fas fa-dumbbell icon"></i>
+                <h3>Top-Tier Equipment</h3>
+                <p>Spacious floor with brand-new cardio, weights, and specialty machines.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <i class="fas fa-hand-rock icon"></i>
+                <h3>High-Energy Classes</h3>
+                <p>Over 50 weekly classes: HIIT, Yoga, Spin, and Zumba included with membership.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <i class="fas fa-user-tie icon"></i>
+                <h3>Certified PTs</h3>
+                <p>One-on-one coaching and personalized programming from our expert staff.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <i class="fas fa-shower icon"></i>
+                <h3>Premium Amenities</h3>
+                <p>Clean locker rooms, luxury showers, and a protein bar for refueling.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="social-proof">
+    <div class="container">
+        <h2>Trusted by Local Community Members</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="quote-text">"The equipment here is the best I've ever used. The staff is friendly, and it's always spotless. Five stars!"</p>
+                <div class="member-info">
+                    <div class="avatar" style="background-image:url('https://image.pollinations.ai/prompt/portrait%20of%20a%20happy%20woman%20working%20out,%20short%20hair,%20bright%20lighting');"></div>
+                    <div><h4>Jessica L.</h4><small>Local Member since 2023</small></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote-text">"I joined for the classes, and they are intense! Best instructors in the area. Great value for the membership price."</p>
+                <div class="member-info">
+                    <div class="avatar" style="background-image:url('https://image.pollinations.ai/prompt/portrait%20of%20a%20man%20smiling%20after%20workout,%20sweating%20slightly');"></div>
+                    <div><h4>Mark R.</h4><small>Group Fitness Enthusiast</small></div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote-text">"Finally, a gym that cares about cleanliness and has trainers who actually pay attention. Highly recommend the personal training!"</p>
+                <div class="member-info">
+                    <div class="avatar" style="background-image:url('https://image.pollinations.ai/prompt/portrait%20of%20an%20older%20woman%20with%20a%20kind%20smile,%20activewear');"></div>
+                    <div><h4>Sarah K.</h4><small>Dedicated Lifter</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="lead-capture" id="lead-capture">
+    <div class="container">
+        <h2>Try Us Free! Get Your 1-Day VIP Pass Now.</h2>
+        <p>Enter your details to instantly receive a voucher for a **FREE 1-Day VIP Guest Pass** and try our gym risk-free!</p>
+        <form id="lead-form" class="email-form">
+            <input type="text" id="name" class="email-input" placeholder="Your Name" required>
+            <input type="email" id="email" class="email-input" placeholder="Your Email Address" required>
+            <button type="submit" class="submit-button">Claim Free Day Pass</button>
+            <div id="email-error" class="error-message"></div>
+            <div id="form-success" style="display:none;width:100%;margin-top:20px;color:#DCEDC8;font-weight:bold;">
+                Success! Your FREE Day Pass voucher has been emailed to you.
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 FitLife Ignite Gym. | Located at Cebu, Philippines | <a href="#" style="color:#999;">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.getElementById('lead-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const emailInput = document.getElementById('email');
+    const nameInput = document.getElementById('name');
+    const email = emailInput.value.trim();
+    const name = nameInput.value.trim();
+    const error = document.getElementById('email-error');
+    const success = document.getElementById('form-success');
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    error.style.display='none';
+    success.style.display='none';
+
+    if(name === ''){
+        error.textContent="Please enter your name.";
+        error.style.display='block';
+        nameInput.focus();
+        return;
+    }
+
+    if(email===''){
+        error.textContent="Please enter your email.";
+        error.style.display='block';
+        emailInput.focus();
+        return;
+    }
+
+    if(!pattern.test(email)){
+        error.textContent="Enter a valid email format.";
+        error.style.display='block';
+        emailInput.focus();
+        return;
+    }
+    
+    console.log('Free Pass Claimed:', name, email);
+    nameInput.value='';
+    emailInput.value='';
+    success.style.display='block';
+    setTimeout(()=>{success.style.display='none';},5000);
+});
+</script>
+
+</body>
+</html>
